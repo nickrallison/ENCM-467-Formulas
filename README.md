@@ -8,4 +8,4 @@ Found [Here](https://github.com/nickrallison/ENCM-467-Formulas/releases)
 
 ## Modification
 
-Should you choose to modify the sheet, I recommend using [Overleaf](www.overleaf.com) as this was originally created on Overleaf
+Should you choose to modify the sheet, I recommend using [Overleaf](www.overleaf.com) as that was the tool originally used to create this.
