@@ -1,0 +1,20 @@
+%------------ Short Channel ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $L < 0.25\mu m \rightarrow$ Short Channel$\\$
+    $\mu_{n(eff)} = \frac{\mu_{no}}{1+\Theta E_{x}} = \frac{\mu_{no}}{1+\frac{\Theta \epsilon_{ox}}{t_{ox}\epsilon_{si}}(V_{gs} - V(x))}\\$
+    $m = \frac{3t_{ox}}{W} + 1\\$
+    $E_{sat} = \frac{2v_{sat}}{\mu}\\$
+    $v = \frac{\mu_{eff} E}{1 + \frac{E}{E_{sat}}}\\$
+    $I_d = \frac{I_{d(Long Channel)}}{1+\frac{V_{ds}}{E_{sat}L}}\\$
+	$I_{dsat} = \frac{I_{dsat(Long Channel)}}{1+\frac{(V_{gs} - V_{th})}{E_{sat}L}}\\$
+    $I_{dsat} = \frac{W v_{sat}C_{ox}}{m}(V_{gs} - V_{th})$ Very Short Channel\\
+    $\frac{1}{V_{dsat}} = \frac{m}{V_{gs} -  V_{th}} + \frac{1}{E_{sat}L}\\$
+    %$V_{dsat} = \frac{(V_{gs} - V_{th})E_{sat}L}{(V_{gs} - V_{th})+E_{sat}L} = \frac{(V_{gs} - V_{th})2 \mu_{eff}L}{(V_{gs} - V_{th})+2 \mu_{eff}L}\\$
+ 	%$ I_{dsat} = Wv_{sat}C_{ox}\frac{(V_{gs} - V_{th})^2}{(V_{gs} - V_{th}) + E_{sat}L} = \frac{1}{2}\mu_o C_{ox}\frac{W}{L}\frac{E_{sat}L(V_{gs} - V_{th})^2}{(V_{gs} - V_{th}) + E_{sat}L} = \frac{1}{2}\mu_o C_{ox}\frac{W}{L}\frac{(V_{gs} - V_{th})^2}{1 + (\frac{\mu_o}{2V_{sat}L} + \Theta)(V_{gs} - V_{th})}\\ (V_{gs} - V_{th})\rightarrow(V_{sg} - |V_{tp}|)$ (For PMOS) $\\$
+    \end{minipage}
+};
+%------------ Short Channel Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Short Channel Effects};
+\end{tikzpicture}

@@ -1,0 +1,19 @@
+%------------ CMOS Logic Gates ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        \textbf{N Input NOR:}\\
+        $V_{th} = \frac{V_{dd}-|V_{tp}|+NV_{tn} \sqrt{k_n/k_p}}{1+N \sqrt{kn/kp}}$\\
+        \textbf{N Input NAND:}\\
+        $V_{th} = \frac{V_{dd}-|V_{tp}|+\frac{1}{N}V_{tn} \sqrt{k_n/k_p}}{1+\frac{1}{N} \sqrt{kn/kp}}$\\
+        Series MOS: $k_{n,p} = k_{n,p1} // k_{n,p2}$\\
+        Parallel MOS: $k_{n,p} = k_{n,p1} + k_{n,p2}$\\
+        $ R_{eq} \propto \frac{1}{\frac{W}{L}} $\\
+        $ R_{opt(PUN)} \propto \frac{L}{2W}$\\
+        $ R_{opt(PDN)} \propto \frac{L}{W}$\\
+        $ t_{elmore} = R_1C_1 + (R_1 + R_2)C_2 ... + (R_1 + R_2 + ... + R_n)C_n$\\   
+    \end{minipage} 
+};
+%------------ CMOS Logic Gates Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {CMOS Logic Gates};
+\end{tikzpicture}

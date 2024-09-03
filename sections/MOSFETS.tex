@@ -1,0 +1,37 @@
+%------------ MOSFETs Content ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+            \begin{circuitikz}[american,]
+                \ctikzset{tripoles/mos style/arrows}
+                \draw (0,0) node[nmos](nMOS){\killdepth{nMOS}};
+                \draw (2.2,0) node[pmos](pMOS){\killdepth{pMOS}};
+            \end{circuitikz}\\ 
+            
+            $ \phi_f = V_Tln(\frac{n_i}{N_a})$\\
+            $ Q_B = \sqrt{2qN_a\epsilon_{si}|-2\phi_f + V_{SB}|}$\\
+            $ C_{ox} = \frac{\epsilon_{ox}}{t_{ox}}$\\
+            $ V_{To} = \phi_{ms} - 2\phi_f - \frac{Q_{Bo}}{C_{ox}} - \frac{Q_{ox}}{C_{ox}}$\\
+            $ V_{Th} = V_{To} + \gamma(\sqrt{|-2\phi_f + V_{SB}|} - \sqrt{|2\phi_f|})$\\
+            $ \gamma = \frac{\sqrt{2q\epsilon_{si}N_a}}{C_{ox}}$\\
+            $ Q_{ox} = qN_{ox}$\\
+            $ k_n' = \mu_nC_{ox}$\\
+            $k_n = \frac{W}{L}k_n'$\\
+            $\lambda$ given: $I_{d,CLM} = I_d(1+\lambda V_{ds})$\\
+            $g_m = g_{gs} = \frac{\partial i_d}{\partial V_{gs}}|_{V_{ds}\rightarrow const} = \frac{2I_d}{V_{gs} - V_{Th}}$\\
+            $g_{bs} = \frac{\partial i_d}{\partial V_{bs}} = g_{gs}\frac{\gamma} {2\sqrt{|-2\phi_f+V_{sb}|}} = \iota g_{gs}\\$
+            $g_{ds} = \lambda I_D$ (Saturation)\\
+            $I_D = g_{gs}V_{gs} + g_{bs}V_{bs} + \frac{V_{ds}}{r_{ds}}$\\
+            \textbf{Unified Model:}\\
+             $ I_d = \mu C_{ox}\frac{w}{L}[(V_{gs} - V_{Th})V_{min} - \frac{V_{min}^2}{2}](1+\lambda V_{ds})\\$
+             Where $V_{min} = min(V_{gs} - V_{th}, V_{ds}, V_{dsat})$
+            
+            
+            
+            
+            
+    \end{minipage}
+};
+%------------ MOSFETs Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {MOSFETs};
+\end{tikzpicture}

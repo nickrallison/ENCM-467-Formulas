@@ -1,0 +1,14 @@
+%------------ Inverter Chain Sizing ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        $f \rightarrow$ Device Size Increase per Inverter\\
+        $f = \sqrt[N]{\frac{C_L}{C_{g,1}}} = \sqrt[N]{F}$\\
+        $f_{opt} = 3.6$\\
+        $N_{opt} = \frac{ln(C_{out}/C_{in})}{ln(3.6)}$\\
+        $t_p = Nt_{po}(1 + \frac{\sqrt[N]{F}}{\gamma})$
+    \end{minipage} 
+};
+%------------ Inverter Chain Sizing Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Inverter Chain Sizing};
+\end{tikzpicture}

@@ -1,0 +1,22 @@
+%------------ MOS Regions Content ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+            \textbf{For nMOS, flip inequalities for pMOS}\\
+            \textbf{Triode: }$ V_{ds} > 0$ \& $V_{gs} - V_{Th} > V_{ds}\\$
+            $ I_d = k_n'\frac{w}{L}[(V_{gs} - V_{Th})V_{ds} - \frac{V_{ds}^2}{2}]$\\
+            \textbf{Saturation: }$ V_{ds} > 0$ and $V_{ds} > V_{gs} - V_{Th}\\$
+            $ I_d = \frac{k_n'}{2}\frac{w}{L}(V_{gs} - V_{Th})^2$
+            %\textbf{Deep Triode: }
+            %$ V_{ds} \ll 2(V_{gs} - V_{Th}) \\$
+            %$ I_d = k_n'\frac{w}{L}(V_{gs} - V_{Th})V_{ds}$
+            %$ R = \frac{1}{k_n'\frac{w}{L}(V_{gs} - V_{Th})}$%\\
+            %\textbf{Subthreshold Region: }
+            %$ V_{gs} < V_{Th}\\$
+            %$ I_d = I_se^{\frac{V_{gs}}{mV_T}}(1-e^{-\frac{V_{ds}}{V_T}})(1+\lambda V_{ds})$\\
+            %Where $I_d$ decreases 1 decade with a decrease of $80mv$        
+    \end{minipage}
+};
+%------------ MOS Regions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {MOS Regions};
+\end{tikzpicture}

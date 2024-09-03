@@ -1,0 +1,27 @@
+%------------ Gate Chain Sizing ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        $g = \frac{C_{Gate}}{C_{Inverter}}$\\
+        $g_{NAND} = \frac{n+2}{3}$\\
+        $g_{NOR} = \frac{2n+1}{3}$\\
+        $g_{XOR2} = 4$\\
+        $g_{XOR3} = 12$\\
+        $g_{NOT} = 1$\\
+        $p = \frac{R_{gate}C_{d,gate}}{R_{inv}C_{d,inv}}$\\
+        $p_{Inverter} = 1$\\
+        $p_{NAND} = n$\\
+        $p_{NOR} = n$\\
+        $p_{XOR, XNOR} = n2^{n - 1}$\\
+        $t_p = t_{po}(\sum_{j=1}^N p_j + \frac{N \sqrt[N]{H}}{\gamma})$\\
+        $b_i = \frac{C_{path} + C_{offpath}}{C_{path}}$ How many gates the output feeds into.\\ 
+        $G = g_1g_2g_3...g_n$ each $g_i$ is only the specific gate passed through.\\
+        $B = b_1b_2b_3...b_n$\\
+        $H = GFB$\\
+        $h_{opt} = \sqrt[N]{H}$ N is how many rows of Gates. \\
+        $C_x = \frac{g_xC_{out}b_x}{h_{opt}}$, This is the Sizing of each Gate, and $C_x$ for one gate is $C_{out}$ for the one prior.
+    \end{minipage} 
+};
+%------------ Gate Chain Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Gate Chain Sizing};
+\end{tikzpicture}

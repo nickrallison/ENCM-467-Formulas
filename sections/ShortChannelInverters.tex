@@ -1,0 +1,19 @@
+%------------ Short Channel Inverters ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \textbf{CMOS: }\\
+    $G = -(g_{M1} + g_{M2})(R_{DS1} || R_{DS2}) $\\
+    $g_m \approx k(V_{gs} - V_{T})$\\
+    $R_{ds} \approx \frac{1}{\lambda I_{d}}$\\
+    $V_{th} = \frac{(V_{Tn} + \frac{V{DSATn}}{2})+r(V_{dd} - |V_{Tp}| + \frac{V_{DSATp}}{2})}{1 + r} \\ \approx \frac{rV_{dd}}{1+r}$\\
+    $r = \frac{k_pV_{DSATp}}{k_nV_{DSATn}} = \frac{E_{SATp}W_p}{E_{SATn}W_n}$\\
+    $\frac{k_p}{k_n} = \frac{V_{DSATn}(V_{th} - V_{Tn}-\frac{V_{DSATn}}{2})}{V_{DSATp}(V_{DD}-V_{Tn}-|V_{Tp}|+\frac{V_{DSATp}}{2})}$\\
+    $G \approx \frac{1 + r}{(V_{th} - V_{Tn} - \frac{V_{DSATn}}{2})(\lambda_{n} - \lambda_{p})} $\\
+    $NM_L = V_{th} - \frac{V_{dd} - V_{th}}{|G|}$\\
+    $NM_H = V_{dd} - V_{th}(1+\frac{1}{|G|})$
+    \end{minipage}
+};
+%------------ Short Channel Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Short Channel Inverters};
+\end{tikzpicture}

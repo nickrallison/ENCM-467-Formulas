@@ -1,0 +1,33 @@
+%------------ Tables ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        \textbf{Sign Conventions: }\\
+        \begin{tabular}{ |c|c|c| } 
+         \hline
+         Parameter & NMOS & PMOS \\ 
+         Substrate & P-Type & N-Type \\ 
+         $\phi_f$ & - & + \\ 
+         $Q_{Bo}, Q_{B}$ & - & + \\ 
+         $V_{SB}$ & + & - \\ 
+         $\gamma$ & + & - \\ 
+         $V_{Th}$ & + & - \\ 
+         \hline
+        \end{tabular}\\
+        \begin{comment}
+        \textbf{MOS Capacitances: }\\
+        \scalebox{0.65}{
+        \begin{tabular}{ |c|c|c|c| } 
+             \hline
+             Capacitance & Cutoff & Saturation & Linear \\ 
+             $C_{gb(total)}$ & $C_{ox}WL$ & 0 & 0 \\ 
+             $C_{gd(total)}$ & $C_{o}W$  & $C_{o}W$ & $\frac{1}{2}C_{ox}WL$ + $C_{o}W$\\ 
+             $C_{gs(total)}$ & $C_{o}W$& $\frac{2}{3}C_{ox}WL + C_{o}W$& $\frac{1}{2}C_{ox}WL + C_{o}W$ \\ 
+             \hline
+        \end{tabular}}\\
+        \end{comment}
+    \end{minipage} 
+};
+%------------ Tables Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Tables};
+\end{tikzpicture}

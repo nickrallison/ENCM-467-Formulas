@@ -1,0 +1,29 @@
+%------------ Transient CMOS Ex ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $R_n = \frac{1}{k_n(V_{dd} - V_{Tn})} = \frac{V_{ds}}{I_{ds}}$\\
+    $R_p = \frac{1}{k_p(V_{dd} - |V_{Tp}|)} = \frac{V_{sd}}{I_{sd}}$\\
+    $\tau \propto \frac{VC}{I} \propto RC$\\
+    $\tau_n = R_nC_L$ From ENEL 343\\
+    $\tau_p = R_pC_L$\\
+    $\tau_{PHL} = ln(2)\tau_n = \frac{0.69C_L}{k_n(V_{dd} - V_{tn})}$\\
+    $\tau_{PLH} = ln(2)\tau_p = \frac{0.69C_L}{k_p(V_{dd} - |V_{tp}|)}$\\
+    $t_p = \frac{1}{2}(\tau_{PHL} + \tau_{PLH})$\\
+    $t_r = 2.2\tau_p = \frac{2.2C_L}{k_p(V_{dd} - |V_{tp}|)}$ 10\% to 90\%\\
+    $t_f = 2.2\tau_n = \frac{2.2C_L}{k_n(V_{dd} - V_{tn})}$ 90\% to 10\%\\
+    $f_{max} = \frac{1}{t_r + t_f}$\\
+    $C_L = C_{gd,n} + C_{gd,p} + C_{db,n} + C_{db,p} + C_{w} + C_{g}$\\
+    
+    \textbf{Short Channel:}\\
+    $R_{n,p} = \frac{3V_{dd}}{4I_{DSAT}}(1-\frac{7}{9}\lambda V_{dd})$\\
+    $I_{DSAT} = kV_{DSAT}(V_{dd} - V_t - \frac{V_{DSAT}}{2})$\\
+    $\tau_{PHL} = \frac{0.52V_{dd}C_L}{I_{DSAT,n}}$\\
+    $\tau_{PLH} = \frac{0.52V_{dd}C_L}{I_{DSAT,p}}$
+
+   
+    \end{minipage} 
+};
+%------------ Transient CMOS Ex Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Transient MOS Inverters};
+\end{tikzpicture}

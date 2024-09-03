@@ -1,0 +1,41 @@
+%------------ Static Inverters ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    \textbf{General: }\\
+    $ V_{IL}$ \& $V_{IH}$ @ $\frac{dV_{out}}{dV_{in}} = -1$\\
+    $ V_{OH} = V_{out}|_{V_{in} = V_{ss}}$\\
+    $ V_{OL} = V_{out}|_{V_{in} = V_{dd}}$\\
+    $ NM_L = |V_{IL} - V_{OL}|$\\
+    $ NM_H = |V_{IH} - V_{OH}|$\\
+    $ V_{th} \rightarrow V_{out} = V_{in}$\\
+    \textbf{Pseudo NMOS}\\
+    $k_r = k_n / k_p$\\
+    $V_{IL} = V_{TN} + \frac{V_{dd} - |V_{TP}|}{\sqrt{k_r^2 + k_r}}$\\
+    $V_{IH}= V_{TN} + \frac{2(V_{dd} - |V_{TP}|)}{\sqrt{3k_r}}$\\
+    $V_{OL} = \frac{V_{dd} - V_{TN}}{\sqrt{3k_r}}$\\
+    $V_{OH} = V_{dd} - (V_{dd} - |V_{tp}|)(1-\sqrt{\frac{k_r}{k_r+1}})$\\
+    \textbf{Resistive Load NMOS Inverter: }\\
+    $V_{OH} = V_{dd}$\\
+    $V_{OL} = V_{dd} - V_{TN} + \frac{1}{k_nR_L} - \sqrt{(V_{dd} - V_{TN} + \frac{1}{k_nR_L})^2-\frac{2V_{dd}}{k_nR_L}}$\\
+    $\approx \frac{V_{dd}}{1+k_nR_L(V_{dd} - V_T)}$\\
+    $V_{IL} = V_{TN} + \frac{1}{k_nR_L}$\\ 					$V_{out}|_{V_{in} = V_{IL}} = V_{dd} - \frac{1}{2k_nR_L}$\\
+    $V_{IH} = V_{TN} + \sqrt{\frac{8V_{dd}}{3k_nR_L}}-\frac{1}{k_nR_L}$\\ $V_{out}|_{V_{in} = V_{IH}} = \sqrt{\frac{2V_{dd}}{3k_nR_L}}$\\
+    $V_{th} = V_{TN} - \frac{1}{k_nR_L}[1-\sqrt{1+2k_nR_L(V_{dd} - V_{TN})}]$\\
+    $P_{DC(Avg)} = \frac{V_{dd}}{2}\frac{V_{dd} - {V_{OL}}}{R_L}$\\
+    \textbf{CMOS Inverter: }\\
+    $V_{th} = \frac{V_{Tn}+\sqrt{\frac{k_p}{k_n}}(V_{dd} - |V_{Tp}|)}{(1 + \sqrt{\frac{k_p}{k_n}})}$\\
+    $\frac{k_p}{k_n} = (\frac{V_{th} - V_{Tn}}{V_{dd} - V_{th} - |V_{Tp}|})^2$\\
+    $V_{IL} = \frac{2V_{out} - |V_{Tp}| - V_{dd} + \frac{k_n}{k_p}V_{Tn}}{(1+\frac{k_n}{k_p})}$\\
+    $V_{IH} = \frac{V_{dd} - |V_{Tp}| + \frac{k_n}{k_p}(2V_{out} + V_{Tn})}{(1+\frac{k_n}{k_p})}$\\
+    Can approximate $Vo = V_{dd}$, or $V_o = 0$ for the above or find exact by substituting back into the $I_{d1} = I_{d2}$ equation.\\
+    Power in CMOS: \\
+    $P_{dyn} = C_LV_{dd}^2f_{0\rightarrow1}$\\
+    $P_{sc} = t_{sc}V_{dd}i_{peak}f$\\
+    $t_{sc} = \frac{V_{dd} - 2V_{T}}{V_{dd}}(\frac{t_r(f)}{0.8})$\\
+    $P_{TOTAL} = P_{DYN} + P_{SC} + P_{STATIC}$
+    \end{minipage} 
+};
+%------------ Static Inverters Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Static Inverters};
+\end{tikzpicture}

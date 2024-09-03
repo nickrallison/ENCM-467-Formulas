@@ -1,0 +1,20 @@
+%------------ Diodes ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+    $ \phi_o = V_Tln(\frac{N_a N_d}{n_i^2})$\\
+    $I_d = I_s(e^{\frac{V_d}{nV_T}} - 1)$\\
+    $W_{dep} = \sqrt{\frac{2\epsilon_{si}(\phi_o - V_d)}{q}(\frac{1}{N_d} + \frac{1}{N_a})}$\\
+    $W_{n} = W_{dep}\frac{N_a}{N_d + N_a}$\\
+    $W_{p} = W_{dep}\frac{N_d}{N_d + N_a}$\\
+    $C_{jo} = \frac{\epsilon_{si}A}{W_{dep}}$\\
+    $C_{j} = C_{jo}\frac{1}{(1-\frac{V_d}{\phi_o})^{m}}$\\
+    $C_{d} = \frac{(I_d + I_s)\tau_T}{V_T} \approx  \frac{I_d\tau_T}{V_T}$\\
+    $C_{d} = C_{jo}\frac{1}{(1-\frac{V_d}{\phi_o})^{m}} + \frac{\tau_TI_s}{V_T}e^{\frac{V_d}{n\phi_T}}$\\
+    $E_{j} = \sqrt{\frac{2q}{\epsilon_{si}}\frac{N_aN_d}{N_a+N_d}(\phi_o - V_d)}$ \\
+     $Q_{j} = A_d\sqrt{2\epsilon_{si}q\frac{N_aN_d}{N_a+N_d}(\phi_o - V_d)}$
+    \end{minipage} 
+};
+%------------ Diodes Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Diodes};
+\end{tikzpicture}

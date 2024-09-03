@@ -1,0 +1,12 @@
+%------------ Sequential Logic ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.3\textwidth}
+        $T  \ge t_{c-q} + t_{plogic} + t_{su}$\\
+        $t_{cdregister} + t_{cdlogic} \ge t_{hold}$
+        
+    \end{minipage} 
+};
+%------------ Sequential Logic Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Sequential Logic};
+\end{tikzpicture}
